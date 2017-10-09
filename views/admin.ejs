@@ -14,6 +14,7 @@
         th,
         td {
             border: 1px solid black;
+            padding: 5px;
         }
     </style>
 </head>
@@ -26,6 +27,7 @@
             <th>Image</th>
             <th>Desc</th>
             <th>Video</th>
+            <th>Modify</th>
         </tr>
         <% products.forEach((product, index) => { %>
             <tr>
@@ -34,6 +36,14 @@
                 <td><%= product.image %></td>
                 <td><%= product.desc %></td>
                 <td><%= product.video %></td>
+                <td>
+                    <a href="/remove/<%= product._id %>" onclick="return confirm('Are you sure?')">
+                        Remove
+                    </a>  
+                    <a href="/update/<%= product._id %>">
+                        Update
+                    </a>                    
+                </td>
             </tr>
         <% }); %>
     </table>

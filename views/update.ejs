@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Socket.io</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form action="/update/<%= product._id %>" method="POST">
+        <input type="text" name="name" placeholder="Name" value="<%= product.name %>">
+        <br><br>
+        <input type="text" name="desc" placeholder="Desc" value="<%= product.desc %>">
+        <br><br>
+        <input type="text" name="image" placeholder="Image" value="<%= product.image %>">
+        <br><br>
+        <input type="text" name="video" placeholder="Video" value="<%= product.video %>">
+        <br><br>
+        <button>Update</button>
+    </form>
+</body>
+<script src="reload/reload.js"></script>
+</html>

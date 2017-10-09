@@ -30,5 +30,31 @@ app.post('/add', parser, (req, res) => {
     .catch(err => res.send(err.message));
 });
 
+app.get('/remove/:id', (req, res) => {
+    const { id } = req.params;
+    Product.findByIdAndRemove(id)
+    .then(() => res.redirect('/admin'))
+    .catch(err => res.send(err.message));
+});
+
+app.get('/update/:id', (req, res) => {
+    const { id } = req.params;
+    Product.findById(id)
+    .then(product => res.render('update', { product }))
+    .catch(err => res.send(err.message));
+});
+
+app.post('/update/:id', parser, (req, res) => {
+    const { name, desc, image, video } = req.body;
+    const { id } = req.params;
+    Product.findByIdAndUpdate(id, { name, desc, image, video })
+    .then(() => res.redirect('/admin'))
+    .catch(() => res.send(err.message));
+});
+
 app.listen(3000, () => console.log('Server start!'));
 reload(app);
+
+// Cai dat heroku cli
+// Tao tai khoan heroku
+// Tao tai khoan mlab.com
