@@ -1,5 +1,6 @@
 const express = require('express');
 const reload = require('reload');
+const Product = require('./db');
 
 const app = express();
 
