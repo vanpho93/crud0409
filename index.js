@@ -10,5 +10,11 @@ app.use(express.static('./public'));
 
 app.get('/', (req, res) => res.render('home'));
 
+app.get('/admin', (req, res) => {
+    // Lay du lieu
+    // Hien thi len admin.ejs
+    res.render('admin');
+});
+
 app.listen(3000, () => console.log('Server start!'));
 reload(app);
