@@ -27,6 +27,15 @@
             <th>Desc</th>
             <th>Video</th>
         </tr>
+        <% products.forEach((product, index) => { %>
+            <tr>
+                <th><%= index + 1 %></th>
+                <th><%= product.name %></th>
+                <th><%= product.image %></th>
+                <th><%= product.desc %></th>
+                <th><%= product.video %></th>
+            </tr>
+        <% }); %>
     </table>
 </body>
 <script src="reload/reload.js"></script>

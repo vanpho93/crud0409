@@ -12,9 +12,9 @@ app.use(express.static('./public'));
 app.get('/', (req, res) => res.render('home'));
 
 app.get('/admin', (req, res) => {
-    // Lay du lieu
-    // Hien thi len admin.ejs
-    res.render('admin');
+    Product.find({})
+    .then(products => res.render('admin', { products }))
+    .catch(err => res.send(err.message));
 });
 
 app.listen(3000, () => console.log('Server start!'));
