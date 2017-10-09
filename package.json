@@ -1,0 +1,19 @@
+{
+  "name": "crud0409",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vanpho93/crud0409.git",
+  "author": "Van Pho Nguyen <vanpho02@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js -e js,ejs"
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.1",
+    "mongoose": "^4.12.1"
+  },
+  "devDependencies": {
+    "reload": "^2.2.2"
+  }
+}
